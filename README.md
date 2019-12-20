@@ -1,5 +1,5 @@
 # Previews
-![Example TDD](.)
+![Example TDD](../assets/s.jpg?raw=true)
 
 # Control Add Delete Edit
 
