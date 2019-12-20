@@ -1,0 +1,47 @@
+<h1>{{ title }}</h1>
+<form (ngSubmit)="addMovie(wikiForm)" #wikiForm="ngForm">
+  <label for="name"> Name</label>
+  <input
+    type="text"
+    name="name"
+    class="form-control"
+    [(ngModel)]= "Movie.name"
+  />
+  <label for="typemov"> Movie type</label>
+  <select name="typemov"
+  class="form-control"
+  ngModel
+  [(ngModel)]= "Movie.typemov">
+      <option value="" selected data-default>เลือกประเภทของหนัง</option>
+      <option>Action</option>
+      <option>Action Sci-fi</option>
+      <option>Cartoons</option>
+      <option>Comaedy</option>
+      <option>Horror</option>
+      <option>Drama</option>
+
+  </select>
+  <br>
+<label id="image">Images Link</label>
+<input
+    type="text"
+    name="image"
+    class="form-control"
+    [(ngModel)]= "Movie.image"
+  />
+<!-- <input type="file" id="file" class="upload-group form-control"> -->
+        
+    
+  <br>
+  <label for="description"> Description</label>
+  <textarea
+    name="description"
+    class="form-control"
+    [(ngModel)]="Movie.description"
+  ></textarea
+  ><br />
+
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>
+<br />
+<a routerLink="/mov">Back To Movie List</a>

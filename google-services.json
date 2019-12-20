@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1095906619839",
+    "firebase_url": "https://seraching-garage.firebaseio.com",
+    "project_id": "seraching-garage",
+    "storage_bucket": "seraching-garage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095906619839:android:29277eebcc2594a659710a",
+        "android_client_info": {
+          "package_name": "com.example.findinggarage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095906619839-rnlbsgnq98qs1m59vf397775mtsduda1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.findinggarage",
+            "certificate_hash": "ca543a4c5131db16a27d14d89f2f215d4ea43efb"
+          }
+        },
+        {
+          "client_id": "1095906619839-4n78d30ts68ihpscbo0c3hv9gp0i35tj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsvcDbjEH8r-Uhzk17PPCAcGNNMSi6vgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095906619839-4n78d30ts68ihpscbo0c3hv9gp0i35tj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

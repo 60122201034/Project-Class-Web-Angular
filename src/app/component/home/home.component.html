@@ -1,0 +1,85 @@
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-inteval="2500" >
+      <img src="assets/ir.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-inteval="2500">
+      <img src="assets/aq.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+  <br><br>
+
+<!-- Card Views -->
+
+<div class="row">
+  <input type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText" >
+</div>
+<br>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <pagination-controls (pageChange)="page = $event" id="1"
+  maxSize="5"
+  directionLinks="true"
+  autoHide="true">
+</pagination-controls>
+  </ul>
+</nav>
+
+<div class="row">
+  <div *ngFor="let data of Movie | filter: searchText | paginate: {itemsPerPage: 9, currentPage:page, id: '1'}; let i = index" class="col-lg-4">
+    <div class="card" style="width: 18rem; margin-bottom: 1rem;">
+      <form class="form">
+        <img
+          src="{{data.value.image}}"
+          width="200"
+          height="430"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ data.value.name }}</h5>
+          <p class="card-text">{{ data.value.typemov }}</p>
+          <button class="btn btn-outline-success" (click)="viewMovie(data)" >
+            Views
+          </button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+<br />
+<!-- page pagination -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <pagination-controls (pageChange)="page = $event" id="1"
+  maxSize="5"
+  directionLinks="true"
+  autoHide="true">
+</pagination-controls>
+  </ul>
+</nav>
+
+<!-- end -->
+
+<!-- Back to top -->
+<section>
+  <a class="gotopbtn" href="#"><i class="fa fa-arrow-up"></i></a>
+</section>
+<!-- end -->

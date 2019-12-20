@@ -1,0 +1,47 @@
+
+
+<div class="row">
+  <input type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText" >
+</div>
+<br>
+
+
+
+<a routerLink="/addMovie"><button class="btn btn-outline-primary" >Add Movie</button></a>
+<section>
+<button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+</section>
+
+<br>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of Movie | filter: searchText | paginate: {itemsPerPage: 5, currentPage:page, id: '1'}; let i = index">
+      <td><img src="{{data.value.image}}" width="70" height="90"></td>
+      <td>{{ data.value.name }}</td>
+      <td>{{ data.value.description }}</td>
+      <td><button class="btn btn-warning" (click)="editMovie(data)">Edit</button>&nbsp;
+        <button class="btn btn-danger" (click)="delMovie(data)" >Delete</button>&nbsp;  
+        <button class="btn btn-outline-success" (click)="viewMovie(data)">Views</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <pagination-controls (pageChange)="page = $event" id="1"
+  maxSize="5"
+  directionLinks="true"
+  autoHide="true">
+</pagination-controls>
+  </ul>
+</nav>
